@@ -7,7 +7,7 @@
     "dev": "pnpm --filter @clone-element-plus/play dev",
     "docs:dev": "pnpm --filter @clone-element-plus/docs dev",
     "docs:build": "pnpm --filter @clone-element-plus/docs build",
-    "test": "echo 'todo'"
+    "test": "pnpm --filter @clone-element-plus/components test"
   },
   "keywords": [],
   "author": "",
