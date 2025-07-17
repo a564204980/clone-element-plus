@@ -7,13 +7,16 @@
     "dev": "pnpm --filter @clone-element-plus/play dev",
     "docs:dev": "pnpm --filter @clone-element-plus/docs dev",
     "docs:build": "pnpm --filter @clone-element-plus/docs build",
-    "test": "pnpm --filter @clone-element-plus/components test"
+    "test": "pnpm --filter @clone-element-plus/components test",
+    "story": "pnpm --filter @clone-element-plus/play storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.6.2",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.20",
     "@vitejs/plugin-vue": "^5.0.4",
@@ -30,11 +33,12 @@
     "vue-tsc": "^1.8.27"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
-    "vue": "^3.4.19",
-    "clone-element-plus": "workspace:*",
     "@clone-element-plus/hooks": "workspace:*",
+    "@clone-element-plus/theme": "workspace:*",
     "@clone-element-plus/utils": "workspace:*",
-    "@clone-element-plus/theme": "workspace:*"
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "clone-element-plus": "workspace:*",
+    "lodash-es": "^4.17.21",
+    "vue": "^3.4.19"
   }
 }

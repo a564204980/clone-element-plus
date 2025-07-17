@@ -1,6 +1,10 @@
-import { withInstaller } from "@clone-element-plus/utils";
 import components from "./components";
 import "@clone-element-plus/theme/index.css";
+import { withInstaller } from "@clone-element-plus/utils";
+import { fas } from "@fortawesome/free-solid-svg-icons"; // 所有的实心图标
+import { library } from "@fortawesome/fontawesome-svg-core"; // 全局图标库管理器
+
+library.add(fas); // 注册图标到全局库
 
 const installer = withInstaller(components);
 
