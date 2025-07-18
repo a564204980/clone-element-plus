@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <ClButton type="primary" size="small"> 这是按钮插槽 </ClButton>
+    <ClButton type="primary" icon="house"> 这是按钮插槽 </ClButton>
   </div>
 </template>
 

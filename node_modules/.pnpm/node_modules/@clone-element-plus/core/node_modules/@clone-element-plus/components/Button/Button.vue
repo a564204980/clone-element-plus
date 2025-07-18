@@ -42,8 +42,9 @@
 
 <script lang="ts" setup>
 import { ClIcon } from "../Icon";
-import { ref, computed } from "vue";
 import { throttle } from "lodash-es";
+import { ref, computed, inject } from "vue";
+import { BUTTON_GROUP_CTX_KEY } from "./contants.ts";
 import type { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
 
 defineOptions({
@@ -61,13 +62,19 @@ const emits = defineEmits<ButtonEmits>();
 
 const slots = defineSlots();
 
+const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0);
 const _ref = ref<HTMLButtonElement>();
 const iconStyle = computed(() => ({
   marginRight: slots.default ? "6px" : "0px",
 }));
+const size = computed(() => ctx?.size ?? props.size ?? "");
 
 const handleBtnClick = (e: MouseEvent) => emits("click", e);
-const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration);
+const handleBtnClickThrottle = throttle(
+  handleBtnClick,
+  props.throttleDuration,
+  { trailing: true }
+);
 
 defineExpose<ButtonInstance>({
   ref: _ref,
